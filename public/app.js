@@ -1,7 +1,6 @@
 const btnMensajes = document.getElementById("btnMensajes")
 const btnCalendario = document.getElementById("btnCalendario")
 const btnResumen = document.getElementById("btnResumen")
-const btnLogin = document.getElementById("btnLogin")
 
 const contenedorMensajes = document.getElementById("contenedorMensajes")
 const contenedorCalendario = document.getElementById("contenedorCalendario")
@@ -10,9 +9,15 @@ const mensajeLogin = document.getElementById("mensajeLogin")
 
 const usuario = document.getElementById("usuario")
 const clave = document.getElementById("clave")
+const loginForm = document.getElementById("loginForm")
 
 const btnRevisionEditorial = document.getElementById("btnRevisionEditorial")
 const contenedorRevisionEditorial = document.getElementById("contenedorRevisionEditorial")
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault()
+  hacerLogin()
+})
 
 btnRevisionEditorial.addEventListener("click", () => {
     cargarRevisionEditorial()
@@ -29,10 +34,6 @@ btnCalendario.addEventListener("click", () => {
 
 btnResumen.addEventListener("click", () => {
   cargarResumen()
-})
-
-btnLogin.addEventListener("click", () => {
-  hacerLogin()
 })
 
 async function hacerLogin() {

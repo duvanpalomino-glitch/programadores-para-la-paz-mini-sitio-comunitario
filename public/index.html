@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
   <header>
     <h1>Mini-sitio comunitario</h1>
     <p>
@@ -14,7 +15,7 @@
     </p>
   </header>
 
-  <main>
+  <main id="main-content">
     <section>
       <h2>Documentación como transparencia</h2>
       <p>
@@ -23,25 +24,31 @@
     </section>
 
     <section>
-      <h2>Login pedagógico</h2>
+      <h2 id="login-title">Login pedagógico</h2>
       <p>
         Este login es solo una práctica para preparar el concepto de middleware de la Clase 25.
         No uses credenciales reales.
       </p>
 
-      <label for="usuario">Usuario:</label>
-      <br>
-      <input id="usuario" type="text" value="docente">
-      <br><br>
+      <form id="loginForm" aria-labelledby="login-title">
+        <fieldset>
+          <legend>Credenciales de prueba</legend>
 
-      <label for="clave">Clave:</label>
-      <br>
-      <input id="clave" type="password" value="demo">
-      <br><br>
+          <label for="usuario">Usuario:</label>
+          <br>
+          <input id="usuario" type="text" value="docente" aria-required="true">
+          <br><br>
 
-      <button id="btnLogin">Ingresar</button>
+          <label for="clave">Clave:</label>
+          <br>
+          <input id="clave" type="password" value="demo" aria-required="true">
+          <br><br>
 
-      <p id="mensajeLogin">Aquí aparecerá la respuesta del login pedagógico.</p>
+          <button id="btnLogin" type="submit">Ingresar</button>
+        </fieldset>
+      </form>
+
+      <p id="mensajeLogin" role="status" aria-live="polite" aria-atomic="true">Aquí aparecerá la respuesta del login pedagógico.</p>
     </section>
     <section>
         <h2>Ruta protegida pedagógica</h2>
@@ -50,9 +57,9 @@
           Luego prueba el acceso a la revisión editorial.
         </p>
       
-        <button id="btnRevisionEditorial">Probar revisión editorial protegida</button>
+<button id="btnRevisionEditorial" type="button">Probar revisión editorial protegida</button>
       
-        <div id="contenedorRevisionEditorial" class="tablero">
+      <div id="contenedorRevisionEditorial" class="tablero" role="status" aria-live="polite" aria-atomic="true">
           Aquí aparecerá la respuesta de la ruta protegida.
         </div>
       </section>
@@ -62,8 +69,8 @@
       <p>
         Esta sección funciona como vitrina comunitaria. Los mensajes se cargan desde la API propia.
       </p>
-      <button id="btnMensajes">Cargar mensajes</button>
-      <div id="contenedorMensajes" class="tablero">
+      <button id="btnMensajes" type="button">Cargar mensajes</button>
+      <div id="contenedorMensajes" class="tablero" role="status" aria-live="polite" aria-atomic="true">
         Aquí aparecerán los mensajes comunitarios.
       </div>
     </section>
@@ -73,8 +80,8 @@
       <p>
         El calendario editorial se consulta desde el backend y permite organizar publicaciones responsables.
       </p>
-      <button id="btnCalendario">Cargar calendario</button>
-      <div id="contenedorCalendario" class="tablero">
+      <button id="btnCalendario" type="button">Cargar calendario</button>
+      <div id="contenedorCalendario" class="tablero" role="status" aria-live="polite" aria-atomic="true">
         Aquí aparecerán las piezas del calendario editorial.
       </div>
     </section>
@@ -84,12 +91,15 @@
       <p>
         Esta sección muestra un resumen generado por el backend a partir de los datos del proyecto.
       </p>
-      <button id="btnResumen">Cargar resumen</button>
-      <div id="contenedorResumen" class="tablero">
+      <button id="btnResumen" type="button">Cargar resumen</button>
+      <div id="contenedorResumen" class="tablero" role="status" aria-live="polite" aria-atomic="true">
         Aquí aparecerá el resumen del proyecto.
       </div>
     </section>
   </main>
+  <footer>
+    <p>hailer duvan julio palomino</p>
+  </footer>
 
   <script src="app.js"></script>
 </body>
